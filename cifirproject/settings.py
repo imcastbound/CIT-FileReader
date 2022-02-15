@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -192,3 +193,6 @@ EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_PASSWORD'))
 
 
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
+
+
+django_heroku.settings(locals())
